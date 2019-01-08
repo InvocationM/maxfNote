@@ -20,7 +20,13 @@ public class WhileTest2 {
             anInt = 1;
 
             System.out.println(" 第二次");
+
+            System.out.println(" disanci");
         }
+    }
+    
+    class innner {
+
     }
 
 }

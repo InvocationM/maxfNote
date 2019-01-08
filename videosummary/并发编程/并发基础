@@ -1,0 +1,16 @@
+synchronized锁。
+锁定的是一个对象。 堆中的对象，也不是引用。
+
+当用synchronized锁定一个静态方法，此时等于锁定Class对象。
+
+多线程的情况下，调用某个class的某个方法m。
+new出某个class对象，然后在new Runnable{
+    public void run(){
+        // 在此调用某个对象的m方法
+        t.m();
+    }
+}.
+
+new Thread(Runnable runnable , String a);
+runnable为实现了Runnable接口的类。
+默认直接调用run方法。 也可以lamble表达式写
