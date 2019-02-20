@@ -1,4 +1,5 @@
-synchronized锁。
+synchronized锁。  这个锁是可重入锁。
+（一个线程已经拥有某个对象的锁，再次申请的时候，仍然会得到该对象的锁。）
 锁定的是一个对象。 堆中的对象，也不是引用。
 
 当用synchronized锁定一个静态方法，此时等于锁定Class对象。
@@ -13,4 +14,10 @@ new出某个class对象，然后在new Runnable{
 
 new Thread(Runnable runnable , String a);
 runnable为实现了Runnable接口的类。
-默认直接调用run方法。 也可以lamble表达式写
+默认直接调用run方法。 也可以lamble表达式写。
+
+symchroinzed 如果出现异常，默认情况下锁会被释放。
+
+volitile和synchronized的区别：
+volitile具有可见性，不具有原子性。
+synchronized既有可见性，也有原子性。
