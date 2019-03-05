@@ -10,4 +10,5 @@
     并且，红黑树的get（）方法的时间复杂度是O(log n),,远远小于链表的O(n)
 
 3， concurrenthashmap的原理
-    分段锁，进来
+    jdk1.7是segment分段锁，将hashmap的大数组，分为一个个的小数组。然后每个分段用reentrantlock锁。
+    jdk1.8，放弃了segment，采用数组+链表+红黑树。
