@@ -2,4 +2,4 @@ AQS: AbstractQueuedSynchronizer.  是一个用来构建锁和同步器的框架�
 类如其名，抽象的队列式的同步器，AQS定义了一套多线程访问共享资源的同步器框架，许多同步类实现都依赖于它，
 如常用的ReentrantLock/Semaphore/CountDownLatch...。
 
-ReadWriteLock ： 底层是 aqs，出了读/读是共享的，其他的都是互斥的。
+ReadWriteLock ： 底层是 aqs，除了读/读是共享的，其他的都是互斥的。
