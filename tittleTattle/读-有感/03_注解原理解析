@@ -1,0 +1,23 @@
+地址：
+https://www.cnblogs.com/yangming1996/p/9295168.html
+
+jdk提供了四种元注解：
+@Target 注解的作用目标，ElementType一个枚举，八种类型。类 方法 字段 构造器 注解等等
+@Retention 注解的生命周期
+@Documented 注解是否应该包含在doc文档中
+@Inherited  注解是否能被子类继承
+
+jdk内置的三大注解
+@override  重写方法
+@Deprecated 过期不推荐使用的方法
+@SubpressWarning 压制警告
+
+
+注解的本质是继承了Anntation接口的接口。
+
+注解和反射。 Class提供了若干个方法，来通过反射得到一个注解实例。
+其实是通过jdk动态代理来实现注解的代理的。
+详情请见 AnnotationInvocationHandler。(此类没有public修饰，没有包访问权限，不能重写)
+
+通过反射方法，拿到此注解的方法，然后调用这个方法，拿到注解属性对应的值（存在map中的）。
+

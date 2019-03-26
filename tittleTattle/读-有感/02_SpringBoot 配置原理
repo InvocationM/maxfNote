@@ -1,0 +1,3 @@
+@SpringBootApplication注解
+这个注解里面又包括 @EnableAutoConfiguration注解，在这个注解中，导入了ImportSelct类（用来得到所有有自动装配注解的String[]）。
+配置所有需要自动配置的类。

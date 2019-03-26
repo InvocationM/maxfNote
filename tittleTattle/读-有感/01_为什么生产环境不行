@@ -1,0 +1,12 @@
+地址：
+https://juejin.im/post/5c997b2c6fb9a070d14c3bb4
+
+
+碰到的是一个生产环境的bug，mybatis的，could not find result map
+
+根据抱出的堆栈错误信息，先总一个简单的判断，既然是UserPersonMapper.xml中没找不到baseMapper元素，那么是不是因为，两个map.xml 文件的加载顺序，在不用的环境下面不同？
+
+查看堆栈信息，寻找到源码的错误位置。查看逻辑，做出判断。
+然后自己写一个源码的子类，手动new一个子类，然后手动输出里面的加载逻辑是不是符合自己的判断假设。
+
+结果证明，是符合的。
