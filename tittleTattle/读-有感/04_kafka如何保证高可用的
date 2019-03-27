@@ -1,0 +1,16 @@
+kafka的数据是会落地写入磁盘的。
+kafka是如何保证数据不丢失的？
+
+1，kafka的分布式存储
+kafka有个partition， 就是把一个数据集分区，每个partition可以部署在不用的机器上面
+
+2，kafka的高可用架构
+对每一个partition都做一个主从冗余备份。每一个leader都将自己的副本follower部署在其他的机器上
+
+3，kafka的核心机智ISR机制
+就是，维护一个isr列表，只要一个leader和他的follower数据同步，就会存在于isr列表。否则就会从列表中被踢出去
+
+4，如何保证数据不丢失？
+    满足俩个条件： 1， 每个partition都至少要有一个follower在isr列表中，跟上了leader的数据同步
+                 2， 每次写入数据的时候都要保证leader成功，follower也成功
+                  3，如果不满足上述两条条件，则一直写入失败，让生产系统不停的重试。
