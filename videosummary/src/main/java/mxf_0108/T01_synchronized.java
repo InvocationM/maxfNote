@@ -17,6 +17,8 @@ public class T01_synchronized {
         synchronized (object) {
             count--;
             System.out.println( Thread.currentThread().getName() + " count =" + count);
+
+             
         }
     }
 
