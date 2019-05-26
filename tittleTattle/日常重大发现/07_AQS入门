@@ -3,3 +3,9 @@ AQS: AbstractQueuedSynchronizer.  是一个用来构建锁和同步器的框架�
 如常用的ReentrantLock/Semaphore/CountDownLatch...。
 
 ReadWriteLock ： 底层是 aqs，除了读/读是共享的，其他的都是互斥的。
+
+AQS：包含了并发的核心组件：state状态量， 当前加锁线程， 等待队列
+        state状态量（int类型，代表了加锁的状态，初始是0）是用cas来抢占线程的
+        当前加锁线程，用来判断当前是哪个线程持有的锁，当是可重入锁的时候，就会对state又加1.
+        等待队列，  所有等待抢占锁的线程的队列集合。
+

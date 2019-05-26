@@ -16,11 +16,13 @@ public class T01_InterfaceHandler {
     @Hello("xxx")
     public static void main(String[] args) throws NoSuchMethodException, FileNotFoundException {
 
+        T01_InterfaceHandler tt = new T01_InterfaceHandler();
         // 拿到一个类的某个方法的注解
         Class<T01_InterfaceHandler> c1 = T01_InterfaceHandler.class;
         Method main = c1.getMethod("main", String[].class);
         Hello annotation = main.getAnnotation(Hello.class);
 
-
+        boolean instance = c1.isInstance(tt);
+        System.out.println(instance);
     }
 }
