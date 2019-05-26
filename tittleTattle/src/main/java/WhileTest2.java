@@ -22,6 +22,9 @@ public class WhileTest2 {
             System.out.println(" 第二次");
 
             System.out.println(" disanci");
+
+            Thread  t1 = new Thread();
+
         }
     }
     
