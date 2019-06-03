@@ -21,3 +21,16 @@ spring中的设计模式：
 抽象工厂模式：提供一个创建 一系列相关或相互依赖的接口。 和简单工厂模式结合起来，可以做到 依赖注入。
 
 
+aop：Aspect oriented Programming 面向切面编程
+    非侵入性的对源代码进行'增强'。
+
+    最简单的实现，自定义一个类，其中有一个method方法。然后直接在main方法中，调用这个方法，在前面后面手动的写'增强方法'。
+    思考? 如何抽象出更适合的代码。
+    将业务抽象为三个主体类： 一是：被代理对象  二是：MehotdInteceptor  三是： MethodInvocation  （其中有类似与AopProxy的标记接口）
+
+tiny-spring: 1，定义bean 2，创建bean工厂 3，bean注入属性  4，bean注入bean属性 5，xml解析bean  6，applicationContext 7，aop 8，Aspect实现 9，aop融入bean创建 10，CGlib织入
+
+
+
+
+
