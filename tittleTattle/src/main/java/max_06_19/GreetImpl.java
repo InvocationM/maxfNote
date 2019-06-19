@@ -10,7 +10,7 @@ package max_06_19;
 public class GreetImpl implements Greet{
 
     @Override
-    public void method() {
+    public void say() {
         System.out.println(" GreetImpl ");
     }
 }

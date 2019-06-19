@@ -9,13 +9,15 @@ package max_06_19;
  */
 public class Client {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws Exception{
+//
         GreetImpl greet = new GreetImpl();
         JdkDynamicProxy jdkDynamicProxy = new JdkDynamicProxy(greet);
         Greet instance = (Greet) jdkDynamicProxy.getInstance();
-        instance.method();
-
+        instance.say();
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+//        Greet instance = new JdkDynamicProxy(new GreetImpl()).getInstance();
+//        instance.say();
     }
 
 }

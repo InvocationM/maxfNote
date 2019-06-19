@@ -9,5 +9,5 @@ package max_06_19;
  */
 public interface Greet {
 
-    public void method();
+    public void say();
 }
