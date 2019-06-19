@@ -1,0 +1,12 @@
+查看进程号：
+linux：
+1. 查看tomcat进程号： ps –ef | grep tomcat
+2. 关闭tomcat进程： kill -9 进程号
+
+windows：
+1. 查看tomcat进程号：netstat -ano | findstr 8082
+2. taskkill /f /pid 进程号
+
+-------------------
+-jmap heap (pid进程号) ： 查看进程为pid的虚拟机的内存信息。
+

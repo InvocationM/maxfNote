@@ -1,0 +1,17 @@
+第一步，构造BeanDefinition和BeanFactory
+    猜测：自定义一个bean的数据结构， 对bean进行增删改查
+    一个beanDefinition就是一个bean对象。BeanFactory对bean进行管理。
+
+第二步 提取BeanFactory接口，实现AbstractBeanFactory和AutowireCapableBeanFactory
+    实现通过类名的string，加载bean。 将原来，类的依赖关系，变成了用string来管理
+
+第三步 给beanDefinition添加一个成员变量，用来存放bean的字段和值。 （一个list的propertyValue），propertyValue里面有name，value两个字段
+    反射注入属性
+
+第四步 读取xml，装配BeanDefinition
+    猜测：读取xml文件，解析bean标签，装配Beandefinition。注册Bean。
+    实际： 定义一个resource接口。解析xml文件，生成inputStream流。一个ResourceLoader类，用来生成Resource接口的对象。
+    定义一个BeanDefinitionReader接口，及其AbstractBeanDefinitionReader实现和XmlBeanDefinitionReader实现。
+    实现，对xml解析，成为一个BeanDefinition。 存储在AbstractBeanDefinitionReader的一个成员变量map中。
+    最后还是用前面的BeanFactory的实现类，加载BeanDefinition
+

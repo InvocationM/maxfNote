@@ -7,7 +7,10 @@
     hashmap产生的死锁线程不安全问题？  多条线程并发时候，在resize的时候，会发生链表互相指向死锁的情况。
     但是在jdk8中采用了红黑树解决了这个问题。
     jdk8对hashmap的优化： 当链表的长度大于8的时候，就会转链表为红黑树。红黑树当然不会发生链表的循环引用情况。
-    并且，红黑树的get（）方法的时间复杂度是O(log n),,远远小于链表的O(n)
+    并且，红黑树的get（）方法的时间复杂度是O(log n),,远远小于链表的O(n).
+
+    既然是数组+链表,get方法怎么在链表中取到你要的那个对象！
+    答：链表是Entry链表。其中每个Entry有key，value，hash，next。 遍历链表，对hash key做==操作，判断是否是你要的那个。
 
 3， concurrenthashmap的原理
     jdk1.7是segment分段锁，将hashmap的大数组，分为一个个的小数组。然后每个分段用reentrantlock锁。
