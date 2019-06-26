@@ -11,4 +11,20 @@ package max_06_19;
  */
 public class Max {
 
+    public static void main(String[] args) {
+
+        Thread t1 = new Thread(){
+            @Override
+            public void run() {
+
+                System.out.println(Thread.currentThread() == this);
+            }
+        };
+
+        t1.start();
+
+        System.out.println("");
+
+    }
+
 }
