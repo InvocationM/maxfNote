@@ -1,0 +1,19 @@
+
+核心集合包括： list set map
+
+1.list
+ArrayList：底层是数组。新增：可能会new数组或者 后面部分的数组重排。删除：后面部分的数组重排
+LinkedList：底层是双向循环链表。新增：直接加在尾部性能略好。删除任意位置元素：需要遍历链表。 遍历：
+
+2,map
+HashMap: 底层：数组+链表。无序
+LinkedHashMap: 是HashMap的子类。有序的HashMap。底层是对HashMap进行了封装，将HashMap的Entry加了两个字段Before和After。
+用来这两个字段等于用一个链表来维护元素的顺序。（基于 添加顺序，或者最近访问顺序）.
+TreeMap: 底层是红黑树，并且实现了Comparator接口，基础元素的固有顺序。一个排序功能的Map，高效的基于key的排序。
+HashTable： 子类：Properties
+
+2，set （一切新能特性和实现细节完全相同，只是对Map集合的封装）加了一个去重
+HashSet：
+LinkedHashSet:
+TreeSet：
+
