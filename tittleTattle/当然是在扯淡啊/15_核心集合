@@ -1,0 +1,42 @@
+
+核心集合包括： list set map
+
+1.list
+ArrayList：底层是数组。新增：可能会new数组或者 后面部分的数组重排。删除：后面部分的数组重排
+LinkedList：底层是双向循环链表。新增：直接加在尾部性能略好。删除任意位置元素：需要遍历链表。 遍历：
+
+2,map
+HashMap: 底层：数组+链表。无序
+LinkedHashMap: 是HashMap的子类。有序的HashMap。底层是对HashMap进行了封装，将HashMap的Entry加了两个字段Before和After。
+用来这两个字段等于用一个链表来维护元素的顺序。（基于 添加顺序，或者最近访问顺序）.
+TreeMap: 底层是红黑树，并且实现了Comparator接口，基础元素的固有顺序。一个排序功能的Map，高效的基于key的排序。
+HashTable： 子类：Properties
+
+2，set （一切新能特性和实现细节完全相同，只是对Map集合的封装）加了一个去重
+HashSet：
+LinkedHashSet:
+TreeSet：
+
+
+常用的并发集合：
+1，并发list：
+Vector
+CopyOnWriteArrayList: 牺牲了写的性能。在试图写数据时，总是先获取对象的副本，然后对副本进行修改，最后写回去。
+
+2, 并发set
+CopyOnWirteArraySet: 类似上面的
+
+3，并发map
+ConcurrentHashMap
+
+4，并发queue
+ConcurrentLinkedQueue： 高性能队列，线程安全
+BlockingQueue接口代表的阻塞队列：（读写阻塞，典型的生产者消费者模式。主要用于多线程之间的数据共享）
+    主要两种实现 ： ArrayBlockingQueue：内部采用数组实现，维护一个定长数组，内部还保存着两个变量，用来标识队列头部和尾部在数组中的位置。默认采用非公平锁。
+                   LinkedBlockingQueue：内部维护一个链表，作为数据的缓冲队列。
+5，并发Deque 双端队列
+LinkedList：线程不安全
+ArrayDeque：内部是数组实现，随机访问性能很高，线程不安全
+LinkedBlockingDeque：线程安全的双端队列实现。
+
+
