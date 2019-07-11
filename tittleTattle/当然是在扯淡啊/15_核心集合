@@ -36,7 +36,7 @@ BlockingQueue接口代表的阻塞队列：（读写阻塞，典型的生产者�
                    LinkedBlockingQueue：内部维护一个链表，作为数据的缓冲队列。
 5，并发Deque 双端队列
 LinkedList：线程不安全
-ArrayDeque：内部是数组实现，随机访问性能很高，线程不安全
+Arr ayDeque：内部是数组实现，随机访问性能很高，线程不安全
 LinkedBlockingDeque：线程安全的双端队列实现。
 
 
