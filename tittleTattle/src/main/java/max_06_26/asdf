@@ -1,0 +1,26 @@
+create or replace view v_infcardreturn as
+select t.PATIENT_NAME,t.PARENT_NAME,case when t.SEX1=1 then '男' else '女' end sex,
+t.TELP,to_char(t.BIRTHDAY_DATE,'yyyy-mm-dd') BIRTHDAY_DATE,t.UNIT,
+ case when instr(t.addr,'嘉兴市') >0 then ''
+       else t1.c_fullname ||' ' end
+       || t.addr allregister_addr,
+g.name gname,d.name dname,
+t.CARD_ID,t.INTIME INTIME2,t.INTIME,t.START_DATE,
+t.DIAGNOSEDATE,s.bgkid, ADDRCODE,t.DISEASE_ID1,s.sjid rid,
+k.reportid uuid,k.glqk,k.gldd,k.zldd,k.zgqk,i.id,t.id as idcard,a.healthid,t.deletetime,
+trunc((nvl(t.intime,sysdate)-nvl(t.birthday_date,nvl(t.intime,sysdate)))/365) age,
+to_char(t.filltime,'yyyy-MM-dd') filltime,t.ismatch,t.studentid,t.rptorgcode,org.org_name orgName,t.update_time,t.is_my_id,t.is_handrecord
+,case when  t.is_flow=1 then '是' else '否' end  is_flow,t.colony_org_code,
+decode(gid.code,'',0,1)  isNeed,
+t.flag flag
+ from infectioncard t left join gj_inf_zydmb g on t.GROUP_ID=g.code left join
+ gj_inf_disease d on t.DISEASE_ID1=d.code left join INF_SJGL s on t.CARD_ID=s.bgkid
+ left join inf_event_clqk k on t.CARD_ID=k.cardid
+ left join inf_isolated i on i.rpid = t.card_id
+ left join s_associate a on t.card_id=a.card_id
+ left join SYS_CHR_ORG org on org.country_org_code=t.rptorgcode
+ left join t_sys_areainfo t1 on t1.c_REGION_CODE = t.addrcode
+ left join (select t.code
+  from gj_inf_disease t
+ inner join isolator s
+    on t.typenum = substr(s.name, 1, 4)

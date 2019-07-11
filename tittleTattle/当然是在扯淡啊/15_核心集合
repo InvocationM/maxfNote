@@ -3,7 +3,7 @@
 
 1.list
 ArrayList：底层是数组。新增：可能会new数组或者 后面部分的数组重排。删除：后面部分的数组重排
-LinkedList：底层是双向循环链表。新增：直接加在尾部性能略好。删除任意位置元素：需要遍历链表。 遍历：
+LinkedList：底层是双向循环链表(Node对象 )。新增：直接加在尾部性能略好。删除任意位置元素：需要遍历链表。 遍历：
 
 2,map
 HashMap: 底层：数组+链表。无序
@@ -30,9 +30,9 @@ CopyOnWirteArraySet: 类似上面的
 ConcurrentHashMap
 
 4，并发queue
-ConcurrentLinkedQueue： 高性能队列，线程安全
+ConcurrentLinkedQueue： 高性能队列，线程安全(原理：cas乐观锁)
 BlockingQueue接口代表的阻塞队列：（读写阻塞，典型的生产者消费者模式。主要用于多线程之间的数据共享）
-    主要两种实现 ： ArrayBlockingQueue：内部采用数组实现，维护一个定长数组，内部还保存着两个变量，用来标识队列头部和尾部在数组中的位置。默认采用非公平锁。
+    主要两种实现 ： ArrayBlockingQueue（显式锁）：内部采用数组实现，维护一个定长数组，内部还保存着两个变量，用来标识队列头部和尾部在数组中的位置。默认采用非公平锁。
                    LinkedBlockingQueue：内部维护一个链表，作为数据的缓冲队列。
 5，并发Deque 双端队列
 LinkedList：线程不安全
