@@ -31,12 +31,13 @@ ConcurrentHashMap
 
 4，并发queue
 ConcurrentLinkedQueue： 高性能队列，线程安全(原理：cas乐观锁)
-BlockingQueue接口代表的阻塞队列：（读写阻塞，典型的生产者消费者模式。主要用于多线程之间的数据共享）
+BlockingQueue接口代表的阻塞队列：（读写阻塞，典型的生产者消费者模式。主要用于多线程之间的数据共享）。其中add put offer的区别。
+                                                add在添加元素时候超出长度了会抛出异常，put超出了会一直线程等待，offer超出了会返回false
     主要两种实现 ： ArrayBlockingQueue（显式锁）：内部采用数组实现，维护一个定长数组，内部还保存着两个变量，用来标识队列头部和尾部在数组中的位置。默认采用非公平锁。
-                   LinkedBlockingQueue：内部维护一个链表，作为数据的缓冲队列。
+                   LinkedBlockingQueue：内部维护一个单向链表，作为数据的缓冲队列。
 5，并发Deque 双端队列
 LinkedList：线程不安全
-Arr ayDeque：内部是数组实现，随机访问性能很高，线程不安全
+ArrayDeque：内部是数组实现，随机访问性能很高，线程不安全
 LinkedBlockingDeque：线程安全的双端队列实现。
 
 
