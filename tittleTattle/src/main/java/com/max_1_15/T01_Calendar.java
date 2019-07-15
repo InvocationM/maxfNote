@@ -22,12 +22,12 @@ public class T01_Calendar {
 
         lastYear.setTime(new Date());
 
-        for (int i = 0; i < 365; i++) {
+        for (int i = 0; i < 560; i++) {
             lastYear.add(Calendar.DATE, -1);
             Date time = lastYear.getTime();
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String format = sdf.format(time);
+            String format = new SimpleDateFormat("yyyy-MM-dd").format(time);
+
 
             System.out.println(format);
 

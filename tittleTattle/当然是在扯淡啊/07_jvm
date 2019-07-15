@@ -29,3 +29,12 @@
 怎么评价一个垃圾收集器？
 吞吐量 垃圾收集器负载 停顿时间 垃圾回收效率 反应时间 堆分配
 
+
+----
+Class.forName（） 和loadClass（） 区别：
+前者进行了加载连接初始化。因为数据库驱动需要用到静态代码块中的DriverManager，所以必须进行初始化。
+后者，只进行了加载，没有连接和初始化。
+driverClass = this.getClass().getClassLoader().loadClass(driverClassName);
+driverClass.getConstructor().newInstance();
+先加载驱动的Class类型，然后用这个Class调用构造器，然后实例化。
+
