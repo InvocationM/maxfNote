@@ -1,3 +1,9 @@
+1, 什么是ioc容器？
+
+2，spring对标签的解析？
+3，bean的加载
+4，容器功能的拓展
+
 第五章  bean的加载
     BeanDefinition: 接口，设置各种bean属性，字段属性，和FactoryBean属性
 
@@ -7,12 +13,6 @@
 
 
 第六章 ApplicationContext的加载
-
-
-
-
-
-
 
 --------------------
 spring中的设计模式：

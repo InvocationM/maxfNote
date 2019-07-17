@@ -1,6 +1,7 @@
 package max_06_20;
 
-import java.util.concurrent.TimeUnit;
+import static java.util.concurrent.TimeUnit.DAYS;
+import static java.util.concurrent.TimeUnit.HOURS;
 
 /**
  * 描述:
@@ -17,8 +18,8 @@ public class TestWriter {
 
 //        while () {
             System.out.println(times --> 0);
-        TimeUnit.DAYS.sleep(1);
-
+        DAYS.sleep(1);
+        HOURS.sleep(1);
 //        }
     }
 
