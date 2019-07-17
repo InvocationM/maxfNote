@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.maxf</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>max</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>max</name>
     <description>日常随机和杂谈</description>
 
     <properties>
