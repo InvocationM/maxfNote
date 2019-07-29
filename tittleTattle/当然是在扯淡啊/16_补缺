@@ -1,0 +1,12 @@
+1，linux查看日志，按照特定字符串过滤
+cat fileName | grep '待查找的字符串'
+
+2，spring mvc用到了哪些注解？
+@pathParible @Component
+
+3,mybatis框架中@param
+作用是给参数命名，参数命令后，就能根据参数名字得到参数值，正确的将参数传入sql语句中
+
+4，spring cloud用到了哪些组件？
+
+5,

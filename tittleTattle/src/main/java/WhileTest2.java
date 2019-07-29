@@ -9,6 +9,7 @@ public class WhileTest2 {
 
     static  int anInt = 0;
 
+
     public static void main(String[] args) throws InterruptedException {
 
         while (anInt == 0) {
