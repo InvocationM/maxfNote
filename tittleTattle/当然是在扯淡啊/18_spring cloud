@@ -1,0 +1,33 @@
+五大核心组件的整理：
+1，Eureka注册中心 保证ap 可用性和分区容错性。 没办法保证c强一致性。
+主要职责：服务的注册发现。 分为两部分 Eureka server 和Eureka client。
+server本质上是一个注册表，里面保存了client的服务名和端口号。client有注册表的备份。
+
+
+2，rebbon 客户端负载均衡
+在Eureka client中寻找服务对应地址，然后 使用负载均衡算法进行选择， Feign就会针对这个地址构造并发起请求。
+
+3，feign  对httpclent的封装
+@FeignClient（"service-name"）
+会对加上这个注解的接口进行动态代理，动态的 发起请求和解析响应
+
+
+4，Hystrix 断路器，主要职责是：熔断 降级 隔离。 用于依赖服务不可用的时候，当前服务的自我保护
+Hystrix底层是很多小小的线程池。每个服务一个线程池，分别用于专门请求那个服务。
+当某个服务挂了以后，可以直接进行熔断，五分钟内的请求都是直接返回。
+降级：每调用一次挂了的服务就在数据库里面加一条记录。 方便手工恢复数据。
+@HystrixCommand（fallbackMethod = "fallback"） 然后就会调用本类中，下面的fallback方法。
+
+常见配置方式
+@HystrixCommand（commandProperties =
+                    {
+                      // 熔断器在整个统计时间内是否开启的阀值
+                      @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
+                      //当出错率超过50%后熔断器启动
+                      @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
+                      // 熔断器工作时间，超过这个时间，先放一个请求进去，成功的话就关闭熔断，失败就再等一段时间
+                      @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000"),
+                    }
+                    ）
+
+5，Zuul 网络路由
