@@ -16,3 +16,10 @@
     jdk1.7是segment分段锁，将hashmap的大数组，分为一个个的小数组。然后每个分段用reentrantlock锁。
     jdk1.8，放弃了segment，采用数组+链表+红黑树。
     为什么要在jdk1.8中取消分段锁，有啥好处？  锁的粒度更小，其次，扩容的时候效率更高。 从整个segment扩容变为一个key的链表扩容。
+
+4, newInstance() 和getClasses()
+newInstance方法是调用了无参构造器。
+getClasses()方法，是返回类定义公共的内部类，以及从父类或者接口继承来的内部类
+ getDeclaredClasses()，返回类中定义的公共的，私有的，受保护的内部类。
+
+ 
