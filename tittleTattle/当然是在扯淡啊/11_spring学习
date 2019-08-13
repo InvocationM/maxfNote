@@ -31,6 +31,14 @@ aop：Aspect oriented Programming 面向切面编程
 tiny-spring: 1，定义bean 2，创建bean工厂 3，bean注入属性  4，bean注入bean属性 5，xml解析bean  6，applicationContext 7，aop 8，Aspect实现 9，aop融入bean创建 10，CGlib织入
 
 
+1,Aware接口：bean对象实现了Aware接口，会在BeanFactory产生bean对象的时候根据其实现的Aware接口，给bean注入相应的信息，从而让bean获取外界的信息。
+业务按特定的需要实现Aware接口，spring容器会主动找到该bean，然后调用特定的方法，将特定的参数传递给bean。
+顶级Aware接口是空接口，而BeanNameAware接口，有一个setBeanName的方法。
+2,强制要求某些环境变量：继承AbstractAplicationContext类，重写initPropertySource方法，在此方法中执行AbstractPropertyResolver的validateRequiredProperties方法。
+3，广播与监听：三个对象主题：发布事件，广播发送者，监听器。
+广播发送者继承了Aware接口，可以在调用特定的方法setApplicationEventPublisher。
+监听器是怎么保证一定会调用到onApplicationEvent方法的。只要当前的bean实现了ApplicationContextListener接口，就会在创建的时候，将当前bean注册到监听器的集合中，然后后面的广播会遍历调用方法。
+
 
 
 

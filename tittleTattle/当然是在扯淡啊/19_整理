@@ -1,0 +1,25 @@
+基于Oauth2.0的网关和  app pc web端的 JWT安全认证。
+
+zipkin 调用链监控
+
+boot admin 做指标监控
+
+rocketMq：
+
+钉钉机器人做服务异常通知：
+
+-----------------
+Eureka： 忽略网卡，推荐网络，剔除注册中心保护机制，注册服务名字，
+
+spring cloud config：配置中心管理，默认使用git
+
+zuul： 本质是一系列filter。
+继承ZuulFIlter，需要实现四个方法，order排序，filterType 过滤器类型，shouldFilter是否执行，run实际业务逻辑，一般此方法中拿到RequestContext，可以对http请求中的所有参数进行校验啥的。
+
+cors：Cross Origin Resource Sharing 跨域资源共享。 配置一个corsFIlter的bean对象。
+Access-Control-Allow-Origin:
+
+csrf：跨站请求伪造。
+目前防御 CSRF 攻击主要有三种策略：验证 HTTP Referer 字段；在请求地址中添加 token 并验证；在 HTTP 头中自定义属性并验证。
+
+XSS攻击全称跨站脚本攻击
