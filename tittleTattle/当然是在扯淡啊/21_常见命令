@@ -12,4 +12,4 @@ find  /home  -name  tomcat   查看home文件夹下面的，名字为tomcat的�
 （类似命令 whereis   locate   which）
 c  aux |grep tomcat  查看名字里面有tomcat的运行进程
 
-
+tailf fileName   ：  实时查看某个日志文件
