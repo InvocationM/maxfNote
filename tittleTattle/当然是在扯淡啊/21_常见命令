@@ -7,3 +7,9 @@ git checkout -b 本地分支名 origin/远程分支名
 tail -300 fileName     查看某个较大日志文件的最后300行
 cat  fileName   查看日志
 tac  fileName   倒序查看日志
+
+find  /home  -name  tomcat   查看home文件夹下面的，名字为tomcat的文件
+（类似命令 whereis   locate   which）
+c  aux |grep tomcat  查看名字里面有tomcat的运行进程
+
+

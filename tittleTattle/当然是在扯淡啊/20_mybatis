@@ -1,2 +1,6 @@
 1,几个handler怎么工作的？
 请求参数封装，返回结果封装，类型封装等。
+
+重要类的笔记：
+ClassLoaderWrapper： 类加载器的包装类，主要两个方法，用来返回 URL 和InputStream
+Resource： 调用ClassLoaderWrapper的方法，来返回InputStream，URL，Properties，File，Reader等。

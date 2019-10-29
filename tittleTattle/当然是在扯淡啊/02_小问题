@@ -24,3 +24,16 @@ getClasses()方法，是返回类定义公共的内部类，以及从父类或�
 
  5 ，Method的getParameterAnnotations()
  返回值是一个二维数组。 annos[][] 。。  第一个[] 是写参数index， 第二个[]是注解index
+
+ 6,class1.isAssignableFrom(class2) 判定此 Class1 对象所表示的类或接口与指定的 Class2 参数所表示的类或接口是否相同，或是否是其超类或超接口。
+ 如果是则返回 true；否则返回 false。
+ 如果该 Class1 表示一个基本类型，且指定的 Class2 参数正是该 Class 对象，则该方法返回 true；否则返回 false。
+
+ 7,instanceof
+   instanceof是Java中的二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。
+   这里说明下：
+   类的实例包含本身的实例，以及所有直接或间接子类的实例
+   instanceof左边显式声明的类型与右边操作元必须是同种类或存在继承关系，也就是说需要位于同一个继承树，否则会编译错误
+
+8，Collections.unmodifiableSortedMap
+不可修改的有序map，再往里添加元素，就直接报错
