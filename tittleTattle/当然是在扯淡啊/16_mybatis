@@ -19,3 +19,11 @@
 
 6，plugin（插件，拦截器）
 实现了InvocationHandler接口，代理模式
+
+7，sqlSession
+用来执行sql，获取映射器，管理事务。
+主要是我们在Mybatis中使用的那些api接口的方法。
+包括：sql的crud。获取映射器，清空session缓存的。刷新批量处理语句并返回结果。
+其中查询若干个重写方法，有返回单条数据的。有返回多条数据的（返回为list或者map）。多条的还有分页参数的。
+sqlSessionFactory。
+对外暴露的就是一个SqlSessionManager，实现了sqlSession接口和sqlSessionFactory接口。可以得到里面的sqlsession。
