@@ -1,0 +1,12 @@
+常见分布式锁的实现方式有： 数据库的版本号 乐观锁， redis， zookeeper，
+分布式锁要满足： 排他，高可用，避免死锁
+
+1，redis实现分布式锁
+原理：用不同的命令，实现lock和unlock。
+
+两种方式，
+1，setnx（key, value）（ set if Not eXits， 设置如果不存在）。 此命令，当且仅当key不存在，则设置key的值为value。存在，则不做任何操作。
+返回值为1表示设置成功。0没有进行任何操作。 后面还要用getset命令来判断哪个客户端拿到了锁。
+2，仅仅使用set 。 （lock中用 expire设置一个过期时间， unlock中设置del）。 本质上jedis封装的原子性命令，直接返回锁设置结果，true或者false。
+
+
