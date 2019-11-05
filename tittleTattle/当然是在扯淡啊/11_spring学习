@@ -38,6 +38,11 @@ tiny-spring: 1，定义bean 2，创建bean工厂 3，bean注入属性  4，bean�
 3，广播与监听：三个对象主题：发布事件，广播发送者，监听器。
 广播发送者继承了Aware接口，可以在调用特定的方法setApplicationEventPublisher。
 监听器是怎么保证一定会调用到onApplicationEvent方法的。只要当前的bean实现了ApplicationContextListener接口，就会在创建的时候，将当前bean注册到监听器的集合中，然后后面的广播会遍历调用方法。
+AbstractApplicationEventMulticaster类中的，ListenerRetriever使用两个LinkedHashSet来保存监听器集合。
+4,感知spring容器的变化，smartLifeCycle接口
+5,改变bean的定义(BeanFactoryPostProcessor接口)
+6,注册bean到spring容器(BeanDefinitionRegistryPostProcessor接口);
+
 
 
 
