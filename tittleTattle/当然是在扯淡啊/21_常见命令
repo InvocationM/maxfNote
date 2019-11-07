@@ -2,6 +2,8 @@
 git checkout -b 本地分支名 origin/远程分支名
 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）。
 
+git fetch  将远程变化拉取到本地，并不合并到当前分支
+
 ------------------------------------------------------------
 
 tail -300 fileName     查看某个较大日志文件的最后300行
@@ -13,3 +15,16 @@ find  /home  -name  tomcat   查看home文件夹下面的，名字为tomcat的�
 c  aux |grep tomcat  查看名字里面有tomcat的运行进程
 
 tailf fileName   ：  实时查看某个日志文件
+
+-------------------------
+查看进程号：
+    linux：
+    1. 查看tomcat进程号： ps –ef | grep tomcat
+    2. 关闭tomcat进程： kill -9 进程号
+
+    windows：
+    1. 查看tomcat进程号：netstat -ano | findstr 8082
+    2. taskkill /f /pid 进程号
+
+-------------------
+-jmap heap (pid进程号) ： 查看进程为pid的虚拟机的内存信息。
