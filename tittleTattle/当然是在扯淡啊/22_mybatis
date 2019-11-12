@@ -27,3 +27,23 @@ Resource： 调用ClassLoaderWrapper的方法，来返回InputStream，URL，Pro
 添加属性到Configration
 1, 读取xml。  将输入流作为构造器参数，传递给XPathParser的构造器。得到node解析器，然后直接用解析中拿到node节点。
 构造了一个XpathParser解析器。使用dom解析的方式，读取字节流，转化为
+
+
+解决的核心问题并不是很复杂， 而框架为什么会变的复杂？ 因为加多了安全效率优化方面的思考。
+
+mybatis源码学习: 按功能模块分析
+自己实现功能模块，然后对照源码它做了哪些方面的改进提升和思考。
+
+1，日志模块
+
+1, sqlsession  做了啥 内部原理  实现细节
+
+
+
+
+
+
+
+
+
+
