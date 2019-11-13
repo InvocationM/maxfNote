@@ -15,8 +15,40 @@ c,基本支撑层。事务管理器，缓存，连接池等等。
 3，常见的细节或者坑
 多级缓存。
 
+1,几个handler怎么工作的？
+请求参数封装，返回结果封装，类型封装等。
+
+重要类的笔记：
+ClassLoaderWrapper： 类加载器的包装类，主要两个方法，用来返回 URL 和InputStream
+Resource： 调用ClassLoaderWrapper的方法，来返回InputStream，URL，Properties，File，Reader等。
+
 
 解析xml或者注解。
-添加属性到Configration/
+添加属性到Configration
 1, 读取xml。  将输入流作为构造器参数，传递给XPathParser的构造器。得到node解析器，然后直接用解析中拿到node节点。
 构造了一个XpathParser解析器。使用dom解析的方式，读取字节流，转化为
+
+
+解决的核心问题并不是很复杂， 而框架为什么会变的复杂？ 因为加多了安全效率优化方面的思考。
+
+mybatis源码学习: 按功能模块分析
+自己实现功能模块，然后对照源码它做了哪些方面的改进提升和思考。
+
+1，日志模块
+对常见的日志框架进行封装。
+
+做了哪些额外的？ 哪些额外的考虑？
+
+
+
+1, sqlsession  做了啥 内部原理  实现细节
+
+
+
+
+
+
+
+
+
+
