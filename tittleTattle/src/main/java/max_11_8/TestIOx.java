@@ -1,5 +1,7 @@
 package max_11_8;
 
+import java.util.Date;
+
 /**
  * 描述:
  * ----  十六进制数字，对应的 asc码字符
@@ -16,6 +18,12 @@ public class TestIOx {
         // char 字符-数字对应      0x20对应的是空格。  小于32的，都是些 虚操作符
         char i = 0x21;
         System.out.println(i);
+        System.currentTimeMillis();
+
+        Date date = new Date();
+        long time = date.getTime();
+
+        System.out.println(time);
     }
 
 }
