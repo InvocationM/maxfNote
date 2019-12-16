@@ -1,0 +1,6 @@
+用到集合的排序。两种排序方式。
+1，Collections.sort()
+2，集合.stream().sorted(Comparator.comparing(User::getYear));
+一是定义了一种 使用了Tim的归并排序算法。 算法颇为复杂。
+二是集合的流操作。
+集合中有null的话，会直接NPE。
