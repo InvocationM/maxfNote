@@ -57,7 +57,7 @@ redis整理：
 
 9， 常见题目
 
-
+hash类型，底层是ziplist或者hashtable。 当field-value小于512的时候，就是压缩表ziplist。
 
 
 
