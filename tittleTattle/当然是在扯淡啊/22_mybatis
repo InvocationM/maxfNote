@@ -38,15 +38,25 @@ mybatis源码学习: 按功能模块分析
 对常见的日志框架进行封装。
 日志分级warn trace debug  error，打印。
 log工厂方法，静态方法，按照顺序对不同的log实现进行加载。 直到log构造器对象不为null，然后用这个加载log对象。
+加载一个日志jar包后，就会将configration的日志属性设置为那个jar包。
+对主流的日志框架，类名写死，然后使用中间包传入的参数，进行类的加载。 并且封装了一层自己的log类。这样就可以统一调用自己的类。
 
 做了哪些额外的？ 哪些额外的考虑？
 
 
 
-1, sqlsession  做了啥 内部原理  实现细节
+2, sqlsession  做了啥 内部原理  实现细节
 
-
-
+数据处理的几个主要的类：
+解析字符串，执行，封装结果。
+crud的17种方法，执行语句，参数，分页参数等。
+主要功能，额外的考虑：参数类型是否是list的包装标记。
+ParameterMapping: 参数映射封装
+ResultMapping: 结果映射封装
+BoundSql: sql语句的映射封装
+MappedStatement: sql一句的映射
+SimpleExecuter: 简单的执行器，普通jdbc的封装
+SimpleStatementHandler: 语句处理器
 
 
 
