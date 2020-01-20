@@ -59,6 +59,7 @@ SimpleExecuter: 简单的执行器，普通jdbc的封装
 SimpleStatementHandler: 语句处理器
 
 
+情景: ， 有default值的字段，insert语句时，对此字段不给值，数据库就会默认给default值，给null的话，会是null
 
 
 
