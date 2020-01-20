@@ -1,0 +1,7 @@
+01，https://juejin.im/post/5df9abc2f265da33ca40139d
+Map中的key和value能否为null。
+结论：HashMap的key和value都可以。ConcurrentHashMap都不可以。
+解释：HashMap默认单线程使用，不会有二义性。ConcurrentHashMap多线程使用，会出现 二义性问题。
+二义性： 当取到某个value为null的时候，结合containsKeys方法。ConcurrentHashMap的多线程操作，可能会删掉key，这样 无法判断到底是集合中没有key，还是这个key的值为null。
+
+02,

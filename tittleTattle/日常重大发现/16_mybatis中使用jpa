@@ -1,0 +1,5 @@
+1，配置不同的dao包。jpa使用 @EnableJpaRepositories(basePackages = "com.mobanker.indonesia.truecashrca.common.repository")
+
+2，配置事务管理器。PlatformTransactionManager
+
+3，配置jpa使用@Column注解。jpa:hibernate:naming:physical-strategy:org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
