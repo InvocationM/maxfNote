@@ -10,3 +10,5 @@ ctrl + b  :  跳到当前方法源码处
 
 git stash changes  ： 将本地更改放置到暂存区
 git rebase :             两者的区别的是  ： 生成patch
+git reset : 本地commit，还未push到远程的情况下，进行版本回退。
+git revert : 本地commit，且提交到远程了。重新生成新版本
