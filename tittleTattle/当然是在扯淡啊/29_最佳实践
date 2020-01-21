@@ -1,0 +1,6 @@
+1，equals的最佳实践
+java.lang.util.Objects
+Objects.equals(o1, o2);
+
+2,学习方式的最佳实践
+计划 + 脑图 + 费曼学习法
