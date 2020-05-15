@@ -38,3 +38,10 @@ driverClass = this.getClass().getClassLoader().loadClass(driverClassName);
 driverClass.getConstructor().newInstance();
 先加载驱动的Class类型，然后用这个Class调用构造器，然后实例化。
 
+
+--
+ClassState
+allocated
+loaded
+
+

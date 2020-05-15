@@ -1,0 +1,2 @@
+数据库的group by或distinct 不区分大小写的。
+java的是区分大小写的。

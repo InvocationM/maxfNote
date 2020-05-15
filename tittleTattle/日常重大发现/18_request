@@ -1,0 +1,4 @@
+@requestParam  用来处理 Content-Type 为 application/x-www-form-urlencoded 编码的内容，Content-Type 默认为该属性。
+
+@
+一般用于处理非 Content-Type: application/x-www-form-urlencoded编码格式的数据，比如：application/json、application/xml

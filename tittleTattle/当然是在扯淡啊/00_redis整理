@@ -60,6 +60,10 @@ redis整理：
 hash类型，底层是ziplist或者hashtable。 当field-value小于512的时候，就是压缩表ziplist。
 
 
+list的底层和常用命令：
+双向链表。 pop push
+
+
 
 
 
